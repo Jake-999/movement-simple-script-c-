@@ -5,7 +5,7 @@ using UnityEngine;
 public class movemement : MonoBehaviour
 {
     public Rigidbody rb; // the players rigidbody
-    public float speed; // the speed of the movement
+    public float speed = 10; // the speed of the movement
     public float FowardFloat = 2000f; // the foward force
 
     // Update is called once per frame
