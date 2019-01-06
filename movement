@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class movemement : MonoBehaviour
+{
+    public Rigidbody rb; // the players rigidbody
+    public float speed; // the speed of the movement
+    public float FowardFloat = 2000f; // the foward force
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKey("w")){
+            rb.AddForce(speed * Time.deltaTime, 0f, 0f, ForceMode.VelocityChange);
+        }
+        if (Input.GetKey("a"))
+        {
+            rb.AddForce(0f, 0f, -speed * Time.deltaTime, ForceMode.VelocityChange);
+        }
+        if (Input.GetKey("s"))
+        {
+            rb.AddForce(-speed * Time.deltaTime, 0f, 0f, ForceMode.VelocityChange);
+        }
+        if (Input.GetKey("d"))
+        {
+            rb.AddForce(0f, 0f, speed * Time.deltaTime, ForceMode.VelocityChange);
+        }
+    }
+}
