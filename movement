@@ -1,25 +1,32 @@
 using UnityEngine;
+                /this needs to be the same name as your script 
+public class CharacterMovement : MonoBehaviour {
 
-public class PlayerMovement : MonoBehaviour
-{
-    //player movement 
-    public float movemement;
     public Rigidbody rb;
-    public float FowardFloat = 2000f;
+    public float speed = 10f; 
+    
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        rb.AddForce(0, 0, movemement * Time.deltaTime, ForceMode.VelocityChange);
-
-        if (Input.GetKey("d")) {
-            rb.AddForce(movemement * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+        if (Input.GetKey("w"))
+        {
+            rb.AddForce(0f, 0f, speed * Time.deltaTime, ForceMode.VelocityChange); // don't forget the ;
         }
-        
         if (Input.GetKey("a"))
         {
-            rb.AddForce(-movemement * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+            rb.AddForce(speed * Time.deltaTime, 0f, 0f, ForceMode.VelocityChange); // don't forget the ;
         }
-        
-        
+        if (Input.GetKey("s"))
+        {
+            rb.AddForce(0f, 0f, -speed * Time.deltaTime, ForceMode.VelocityChange); // don't forget the ;
+        }
+        if (Input.GetKey("d"))
+        {
+          
+            {
+                rb.AddForce(-speed * Time.deltaTime, 0f, 0f, ForceMode.VelocityChange);
+            }
+            
+        }
     }
 }
